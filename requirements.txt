@@ -1,0 +1,6 @@
+pip install scikit-learn==1.5.0
+pip install flask==3.0.3
+pip install pandas==2.2.2
+pip install numpy==1.26.4
+
+Python 3.12.0
