@@ -1,0 +1,182 @@
+<head>
+  <title>Sleep Disorder Prediction Using Machine Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/css/animate.css">
+  <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../static/css/magnific-popup.css">
+  <link rel="stylesheet" href="../static/css/flaticon.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <style>
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .information {
+      text-align: center;
+    }
+    .info {
+      margin-left: 150px;
+    }
+    .btn-success {
+      margin: 20px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{{url_for('index')}}">Sleep <span>Disorders</span></a>
+      <div class="order-lg-last btn-group">
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="{{url_for('index')}}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{url_for('upload')}}" class="nav-link">Upload</a></li>
+          <li class="nav-item"><a href="{{url_for('prediction')}}" class="nav-link">Prediction</a></li>
+          <li class="nav-item"><a href="{{url_for('performance')}}" class="nav-link">Performance_Analysis</a></li>
+          <li class="nav-item active"><a href="{{url_for('chart')}}" class="nav-link">Chart</a></li>
+          <li class="nav-item"><a href="{{url_for('index')}}" class="nav-link">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('../static/images/wine9.jpg');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-end justify-content-center">
+        <div class="col-md-9 ftco-animate mb-5 text-center">
+          <h2 class="mb-0 bread">Result</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section">
+    <div class="container">
+      <center><h2 class="mb-0 bread">Result</h2></center>  
+      <div class="row">
+        <div class="information">
+          <div class="info">
+            <table>
+              <thead>
+                <tr>
+                  <th>Input</th>
+                  <th>Output</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gender: The gender of the person (Male/Female)</td>
+                  <td>{{Depa}}</td>
+                </tr>
+                <tr>
+                  <td>Age: The age of the person in years.</td>
+                  <td>{{Age}}</td>
+                </tr>
+                <tr>
+                  <td>Occupation: The occupation or profession of the person</td>
+                  <td>{{Edu}}</td>
+                </tr>
+                <tr>
+                  <td>Sleep Duration (hours): The number of hours the person sleeps per day</td>
+                  <td>{{Sleep_Duration}}</td>
+                </tr>
+                <tr>
+                  <td>Quality of Sleep (scale: 1-10): A subjective rating of the quality of sleep, ranging from 1 to 10</td>
+                  <td>{{Quality_of_Sleep}}</td>
+                </tr>
+                <tr>
+                  <td>Physical Activity Level (minutes/day): The number of minutes the person engages in physical activity daily.</td>
+                  <td>{{Physical_Activity_Level}}</td>
+                </tr>
+                <tr>
+                  <td>Stress Level (scale: 1-10): A subjective rating of the stress level experienced by the person, ranging from 1 to 10.</td>
+                  <td>{{Stress_Level}}</td>
+                </tr>
+                <tr>
+                  <td>BMI Category: The BMI category of the person (e.g., Underweight, Normal, Overweight)</td>
+                  <td>{{Job}}</td>
+                </tr>
+                <tr>
+                  <td>Blood Pressure (systolic/diastolic): The blood pressure measurement of the person, indicated as systolic pressure over diastolic pressure</td>
+                  <td>{{jobs}}</td>
+                </tr>
+                <tr>
+                  <td>Heart Rate (bpm): The resting heart rate of the person in beats per minute</td>
+                  <td>{{Heart_Rate}}</td>
+                </tr>
+                <tr>
+                  <td>Daily Steps: The number of steps the person takes per day</td>
+                  <td>{{Daily_Steps}}</td>
+                </tr>
+               
+                <tr>
+                  <td>Model</td>
+                  <td>{{model}}</td>
+                </tr>
+                <tr>
+                  <td>Sleep Disorder: The presence or absence of a sleep disorder in the person (Healthy, Insomnia, Sleep Apnea)</td>
+                  <td>{{prediction_text}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ftco-footer">
+    <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../static/js/popper.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/jquery.easing.1.3.js"></script>
+  <script src="../static/js/jquery.waypoints.min.js"></script>
+  <script src="../static/js/jquery.stellar.min.js"></script>
+  <script src="../static/js/owl.carousel.min.js"></script>
+  <script src="../static/js/jquery.magnific-popup.min.js"></script>
+  <script src="../static/js/jquery.animateNumber.min.js"></script>
+  <script src="../static/js/scrollax.min.js"></script>
+  
+  <script src="../static/js/google-map.js"></script>
+  <script src="../static/js/main.js"></script>
+  
+  </body>
+</html>
